@@ -18,7 +18,7 @@ const OpenedIssue = () => {
     const open = true;
     console.log(page);
     const response = await axios.get(
-      `http://localhost:8000/issues/open/closed?page=${page}&open=${open}`
+      `https://github-issue-page123.onrender.com/issues/open/closed?page=${page}&open=${open}`
     );
     setIssue(response.data.issue);
     console.log(response.data.issue);
@@ -29,7 +29,7 @@ const OpenedIssue = () => {
       status_text: 'Closed',
     };
     axios
-      .put(`http://localhost:8000/issues/${data}`, newIssue)
+      .put(`https://github-issue-page123.onrender.com/issues/${data}`, newIssue)
       .then((res) =>
         res.data.success === true ? (window.location = '/') : console.log('!')
       );

@@ -31,7 +31,7 @@ const CreatePage = () => {
       status_text: 'Opened',
     };
     axios
-      .post('http://localhost:8000/issues/add', newIssue)
+      .post('https://github-issue-page123.onrender.com/issues/add', newIssue)
       .then((res) =>
         res.data.success === true
           ? (window.location = '/')

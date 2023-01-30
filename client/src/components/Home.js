@@ -7,7 +7,7 @@ const Home = () => {
   const [issue, setIssue] = useState([]);
   const [page, setPage] = useState(1);
 
-  const url = `http://localhost:8000/issues?page=${page}`;
+  const url = `https://github-issue-page123.onrender.com/issues?page=${page}`;
   useEffect(() => {
     async function getPost() {
       const response = await axios.get(url);
@@ -33,7 +33,7 @@ const Home = () => {
       status_text: 'Closed',
     };
     axios
-      .put(`http://localhost:8000/issues/${data}`, newIssue)
+      .put(`https://github-issue-page123.onrender.com/issues/${data}`, newIssue)
       .then((res) =>
         res.data.success === true
           ? (window.location = '/')
@@ -67,7 +67,6 @@ const Home = () => {
                 <h5 className='card-title'>{issue.issue_title}</h5>
                 <p className='card-text'>{issue.issue_text}</p>
                 <p className='card-text'>{issue.status_text}</p>
-                <p className='card-text'>Opened on {issue.createdAt}</p>
               </div>
               {issue.open === true ? (
                 <button

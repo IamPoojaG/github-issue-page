@@ -18,21 +18,10 @@ const ClosedIssue = () => {
     const open = false;
     console.log(page);
     const response = await axios.get(
-      `http://localhost:8000/issues/open/closed?page=${page}&open=${open}`
+      `https://github-issue-page123.onrender.com/issues/open/closed?page=${page}&open=${open}`
     );
     setIssue(response.data.issue);
     console.log(response.data.issue);
-  }
-  function CloseThisIssue(data) {
-    const newIssue = {
-      open: false,
-      status_text: 'Closed',
-    };
-    axios
-      .put(`http://localhost:8000/issues/${data}`, newIssue)
-      .then((res) =>
-        res.data.success === true ? (window.location = '/') : console.log('!')
-      );
   }
   if (issue.length === 0)
     return (
